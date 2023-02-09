@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header, .navigation, .main, .sidebar, .ads, .footer {
+    border: 2px solid salmon;
+    padding: 25px;
+}
+
+@media (max-width: 480px) {
+    section {
+        display: flex;
+        width: 80%;
+        flex-direction: column;
+        gap: 20px;
+        padding: 100px;
+            /* justify-content: center; */
+        align-items: center;
+        }
+        .header,
+        .navigation,
+        .sidebar,
+        .ads,
+        .footer {
+            width: 200px;
+            height: 20px;
+        }
+        .main {
+            width: 200px;
+            height: 250px;
+        }
+}
+
+@media(min-width: 481px) {
+    section {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        column-gap: 5px;
+        row-gap: 5px;
+        /* justify-content: center;
+        align-items: center; */
+        /* width: 80%; */
+        /* flex-direction: column; */
+        /* gap: 20px; */
+        padding: 100px;
+
+    }
+    .header {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    .navigation {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+    .sidebar {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+    .main {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+
+    .ads {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 4;
+        grid-row-end: 5;
+    }
+    .footer {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 4;
+        grid-row-end: 5;
+    }
+}
+
+@media(min-width: 1025px) {
+
+    .header {
+        grid-area: header;
+    }
+
+    .navigation {
+        grid-area: navigation;
+    }
+
+    .main {
+        grid-area: main;
+    }
+
+    .sidebar {
+        grid-area: sidebar;
+    }
+
+    .ads {
+        grid-area: ads;
+    }
+
+    .footer {
+        grid-area: footer;
+    }
+
+    section {
+        display: grid;
+        grid-template-areas:
+        'header header header header' 
+        'sidebar navigation navigation ads'
+        'sidebar main main ads'
+        'sidebar main main ads'
+        'sidebar main main ads'
+        'footer footer footer footer' ;
+        grid-gap: 10px;
+}
+}
